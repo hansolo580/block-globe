@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="601.0" prefWidth="1277.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Calendar">
+    <children>
+        <TabPane layoutX="89.0" layoutY="186.0" prefHeight="367.0" prefWidth="1247.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="219.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+            <tabs>
+                <Tab fx:id="tabWeekAppts" closable="false" text="This Week">
+                    <content>
+                        <AnchorPane prefHeight="542.0" prefWidth="1277.0">
+                            <children>
+                                <TableView fx:id="tableViewWeeklyAppts" prefHeight="339.0" prefWidth="1102.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="tableColumnWeeklyPatientName" editable="false" minWidth="90.0" prefWidth="90.0" text="Patient" />
+                                        <TableColumn fx:id="tableColumnWeeklyApptType" editable="false" minWidth="75.0" prefWidth="75.0" text="Type" />
+                                        <TableColumn fx:id="tableColumnWeeklyApptStart" editable="false" minWidth="120.0" prefWidth="120.0" text="Start" />
+                                        <TableColumn fx:id="tableColumnWeeklyApptNotes" editable="false" minWidth="90.0" prefWidth="90.0" text="Notes" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="tabBiWeekAppts" closable="false" text="Next Two Weeks">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="tableViewBiWeekAppts" style="-fx-selection-bar: blue;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="tableColumnBiWeekPatientName" editable="false" minWidth="90.0" prefWidth="90.0" text="Patient" />
+                                        <TableColumn fx:id="tableColumnBiWeekApptType" editable="false" minWidth="75.0" prefWidth="75.0" text="Type" />
+                                        <TableColumn fx:id="tableColumnBiWeekApptStart" editable="false" minWidth="120.0" prefWidth="120.0" text="Start" />
+                                        <TableColumn fx:id="tableColumnBiWeekApptNotes" editable="false" minWidth="90.0" prefWidth="90.0" text="Notes" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="tabMonthAppts" closable="false" text="This Month">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="tableViewMonthAppts" style="-fx-selection-bar: blue;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="tableColumnMonthPatientName" editable="false" minWidth="90.0" prefWidth="90.0" text="Patient" />
+                                        <TableColumn fx:id="tableColumnMonthApptType" editable="false" minWidth="75.0" prefWidth="75.0" text="Type" />
+                                        <TableColumn fx:id="tableColumnMonthApptStart" editable="false" minWidth="120.0" prefWidth="120.0" text="Start" />
+                                        <TableColumn fx:id="tableColumnMonthApptNotes" editable="false" minWidth="90.0" prefWidth="90.0" text="Notes" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <ButtonBar layoutX="57.0" layoutY="438.0" prefHeight="40.0" prefWidth="450.0">
+            <buttons>
+                <Button fx:id="buttonAddAppt" mnemonicParsing="false" onAction="#fetchNewAppt" prefHeight="25.0" prefWidth="130.0" text="Add Appointment" textAlignment="CENTER" />
+                <Button fx:id="buttonEditAppt" mnemonicParsing="false" onAction="#editAppt" prefWidth="130.0" text="Edit Appointment" textAlignment="CENTER" />
+                <Button fx:id="buttonRemoveAppt" mnemonicParsing="false" onAction="#removeAppt" prefWidth="130.0" text="Delete Appointment" textAlignment="CENTER" />
+            </buttons>
+        </ButtonBar>
+        <ButtonBar layoutX="57.0" layoutY="511.0" prefHeight="40.0" prefWidth="450.0">
+            <buttons>
+                <Button fx:id="buttonAddPatient" mnemonicParsing="false" onAction="#newPatient" prefWidth="130.0" text="Add Patient" textAlignment="CENTER" />
+                <Button fx:id="buttonEditPatient" mnemonicParsing="false" onAction="#editPatient" prefWidth="130.0" text="Edit Patient" textAlignment="CENTER" />
+                <Button fx:id="buttonRemovePatient" mnemonicParsing="false" onAction="#removePatient" prefWidth="130.0" text="Delete Patient" textAlignment="CENTER" />
+            </buttons>
+        </ButtonBar>
+        <ButtonBar layoutX="695.0" layoutY="464.0" prefHeight="40.0" prefWidth="512.0">
+            <buttons>
+                <Button fx:id="buttonSuccessLog" mnemonicParsing="false" onAction="#loadSuccessLog" prefWidth="130.0" text="Successful Logins" textAlignment="CENTER" />
+                <Button fx:id="buttonFailLog" mnemonicParsing="false" onAction="#loadFailLog" prefWidth="130.0" text="Failed Logins" textAlignment="CENTER" />
+            <Button fx:id="buttonReport" mnemonicParsing="false" onAction="#loadReport" prefWidth="130.0" text="View Reports" textAlignment="CENTER" />
+                <Button fx:id="buttonQuit" cancelButton="true" mnemonicParsing="false" onAction="#quitAction" prefWidth="130.0" text="Quit" />
+            </buttons>
+        </ButtonBar>
+        <Label layoutX="172.0" layoutY="397.0" text="Appointment Management">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="183.0" layoutY="478.0" text="Patient Management">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

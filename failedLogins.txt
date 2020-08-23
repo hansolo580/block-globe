@@ -1,0 +1,16 @@
+Aug 01, 2020 3:41:39 PM Controllers.Login lambda$actionLogin$0
+WARNING: Invalid login for counselor: 
+Aug 01, 2020 3:42:23 PM Controllers.Login lambda$actionLogin$0
+WARNING: Invalid login for counselor: 
+Aug 02, 2020 8:04:24 AM Controllers.Login lambda$actionLogin$0
+WARNING: Invalid login for counselor: admin
+Aug 08, 2020 3:31:58 PM Controllers.Login lambda$actionLogin$0
+WARNING: Invalid login for counselor: admin
+Aug 08, 2020 3:37:52 PM Controllers.Login lambda$actionLogin$0
+WARNING: Invalid login for counselor: admin
+Aug 08, 2020 3:38:31 PM Controllers.Login lambda$actionLogin$0
+WARNING: Invalid login for counselor: admin
+Aug 12, 2020 2:30:21 PM Controllers.Login lambda$actionLogin$0
+WARNING: Invalid login for counselor: admin
+Aug 22, 2020 12:51:57 PM Controllers.Login lambda$actionLogin$1
+WARNING: Invalid login for counselor: admin
